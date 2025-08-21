@@ -1,0 +1,131 @@
+{
+  "receipt_info": {
+    "id": "ac91fbf9-5dad-4607-8998-3990c0f04423",
+    "user_id": "0d21a792-c3ff-474a-ae24-2f57f860d815",
+    "store_name": "Trader Joe's",
+    "store_chain": "Trader Joe's",
+    "receipt_date": "2025-08-20T04:00:00.000Z",
+    "receipt_time": "11:57:05",
+    "total_amount": "25.87",
+    "tax_amount": "1.92",
+    "subtotal_amount": "23.95",
+    "status": "completed",
+    "created_at": "2025-08-20T15:57:08.096Z",
+    "processed_at": "2025-08-20T15:57:08.153Z"
+  },
+  "items": [
+    {
+      "item_id": "5ff5bffd-8a81-49e5-b8ea-1aff818abab2",
+      "item_name": "Organic Bananas",
+      "quantity": 1,
+      "unit_price": 2.99,
+      "line_total": 2.99,
+      "confidence_score": 0.95,
+      "raw_text": "Organic Bananas"
+    },
+    {
+      "item_id": "b6745297-604d-4bab-bdab-239deabc0b1f",
+      "item_name": "Almond Milk",
+      "quantity": 1,
+      "unit_price": 3.49,
+      "line_total": 3.49,
+      "confidence_score": 0.93,
+      "raw_text": "Almond Milk"
+    },
+    {
+      "item_id": "a2b480ec-0475-45e6-a798-f3def41616c1",
+      "item_name": "Greek Yogurt",
+      "quantity": 1,
+      "unit_price": 5.99,
+      "line_total": 5.99,
+      "confidence_score": 0.91,
+      "raw_text": "Greek Yogurt"
+    },
+    {
+      "item_id": "edaec7d2-77da-4d11-b9c8-605c8d0c01a0",
+      "item_name": "Sourdough Bread",
+      "quantity": 1,
+      "unit_price": 2.49,
+      "line_total": 2.49,
+      "confidence_score": 0.89,
+      "raw_text": "Sourdough Bread"
+    },
+    {
+      "item_id": "7c5ff04a-0ad0-4144-9097-514fd6981c02",
+      "item_name": "Coffee Beans",
+      "quantity": 1,
+      "unit_price": 8.99,
+      "line_total": 8.99,
+      "confidence_score": 0.94,
+      "raw_text": "Coffee Beans"
+    }
+  ],
+  "raw_ocr_text": "TRADER JOE'S\nStore #123\n123 Main Street\nAnytown, CA 90210\n\nDate: 8/20/2025\nTime: 11:57:05 AM\n\nOrganic Bananas     $2.99\nAlmond Milk         $3.49\nGreek Yogurt        $5.99\nSourdough Bread     $2.49\nCoffee Beans        $8.99\n\nSubtotal           $23.95\nTax                 $1.92\nTOTAL              $25.87\n\nThank you for shopping!",
+  "tabscanner_full_response": {
+    "rawData": {
+      "source": "mock_data",
+      "filename": "receipt.jpg",
+      "timestamp": "2025-08-20T15:57:05.920Z"
+    },
+    "rawText": "TRADER JOE'S\nStore #123\n123 Main Street\nAnytown, CA 90210\n\nDate: 8/20/2025\nTime: 11:57:05 AM\n\nOrganic Bananas     $2.99\nAlmond Milk         $3.49\nGreek Yogurt        $5.99\nSourdough Bread     $2.49\nCoffee Beans        $8.99\n\nSubtotal           $23.95\nTax                 $1.92\nTOTAL              $25.87\n\nThank you for shopping!",
+    "receipt": {
+      "tax": 1.92,
+      "date": "2025-08-20",
+      "time": "11:57:05",
+      "items": [
+        {
+          "name": "Organic Bananas",
+          "category": "Produce",
+          "quantity": 1,
+          "unitPrice": 2.99,
+          "confidence": 0.95,
+          "totalPrice": 2.99
+        },
+        {
+          "name": "Almond Milk",
+          "category": "Dairy",
+          "quantity": 1,
+          "unitPrice": 3.49,
+          "confidence": 0.93,
+          "totalPrice": 3.49
+        },
+        {
+          "name": "Greek Yogurt",
+          "category": "Dairy",
+          "quantity": 1,
+          "unitPrice": 5.99,
+          "confidence": 0.91,
+          "totalPrice": 5.99
+        },
+        {
+          "name": "Sourdough Bread",
+          "category": "Bakery",
+          "quantity": 1,
+          "unitPrice": 2.49,
+          "confidence": 0.89,
+          "totalPrice": 2.49
+        },
+        {
+          "name": "Coffee Beans",
+          "category": "Beverages",
+          "quantity": 1,
+          "unitPrice": 8.99,
+          "confidence": 0.94,
+          "totalPrice": 8.99
+        }
+      ],
+      "phone": null,
+      "total": 25.87,
+      "address": "123 Main Street, Anytown, CA 90210",
+      "merchant": "Trader Joe's",
+      "subtotal": 23.95
+    },
+    "success": true,
+    "confidence": 0.92
+  },
+  "export_metadata": {
+    "exported_at": "2025-08-21T13:31:48.153Z",
+    "export_type": "complete_receipt_data",
+    "item_count": "5"
+  }
+}

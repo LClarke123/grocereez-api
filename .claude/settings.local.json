@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start)",
+      "Bash(timeout:*)",
+      "Bash(move:*)",
+      "Bash(mv:*)",
+      "Bash(node:*)",
+      "WebFetch(domain:tabscanner.com)",
+      "Bash(mkdir:*)",
+      "Bash(npm test)",
+      "Bash(taskkill:*)",
+      "Bash(cmd //c:*)",
+      "WebFetch(domain:docs.tabscanner.com)",
+      "Bash(psql:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

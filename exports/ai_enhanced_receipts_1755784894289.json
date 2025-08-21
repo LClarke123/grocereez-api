@@ -1,0 +1,417 @@
+{
+  "export_metadata": {
+    "exported_at": "2025-08-21T14:01:34.289Z",
+    "format": "ai_enhanced_receipt_data",
+    "version": "1.0"
+  },
+  "receipts": [
+    {
+      "receipt_id": "122542f5-890b-476b-9adb-f9f23db422ac",
+      "store_name": "Trader Joe's",
+      "chain": "Trader Joe's",
+      "store_type": "grocery",
+      "transaction_date": "2025-08-21T04:00:00.000Z",
+      "total_amount": "25.8700000000000000",
+      "ai_confidence_score": 94,
+      "shopping_category": "convenience",
+      "health_score": null,
+      "dietary_flags": [],
+      "estimated_people": 1,
+      "item_count": "5",
+      "items": [
+        {
+          "name": "Coffee Beans",
+          "category": "beverages",
+          "price": 8.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "Greek Yogurt",
+          "category": "dairy",
+          "price": 5.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "Almond Milk",
+          "category": "dairy",
+          "price": 3.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "Organic Bananas",
+          "category": "produce",
+          "price": 2.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "Sourdough Bread",
+          "category": "bakery",
+          "price": 2.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        }
+      ]
+    },
+    {
+      "receipt_id": "576c4cb3-02a7-4564-a292-bea7a5242320",
+      "store_name": "Trader Joe's",
+      "chain": "Trader Joe's",
+      "store_type": "grocery",
+      "transaction_date": "2025-08-20T04:00:00.000Z",
+      "total_amount": "25.8700000000000000",
+      "ai_confidence_score": 94,
+      "shopping_category": "convenience",
+      "health_score": null,
+      "dietary_flags": [],
+      "estimated_people": 1,
+      "item_count": "5",
+      "items": [
+        {
+          "name": "Coffee Beans",
+          "category": "beverages",
+          "price": 8.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "Greek Yogurt",
+          "category": "dairy",
+          "price": 5.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "Almond Milk",
+          "category": "dairy",
+          "price": 3.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "Organic Bananas",
+          "category": "produce",
+          "price": 2.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "Sourdough Bread",
+          "category": "bakery",
+          "price": 2.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        }
+      ]
+    },
+    {
+      "receipt_id": "90a7a801-f9e9-4f7f-9025-9231061499d2",
+      "store_name": "Trader Joe's",
+      "chain": "Trader Joe's",
+      "store_type": "grocery",
+      "transaction_date": "2025-08-17T04:00:00.000Z",
+      "total_amount": "1.00000000000000000000",
+      "ai_confidence_score": 90,
+      "shopping_category": "convenience",
+      "health_score": null,
+      "dietary_flags": [],
+      "estimated_people": 2,
+      "item_count": "35",
+      "items": [
+        {
+          "name": "OL VE OIL",
+          "category": "pantry",
+          "price": 9.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "SUSHI VEGETARIAN ROLL",
+          "category": "other",
+          "price": 5.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "BLUEBERRIES OZ",
+          "category": "other",
+          "price": 5.49,
+          "quantity": 18,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "A - AVOCADO BAG HASS 4CT",
+          "category": "other",
+          "price": 4.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "WRAP CREAMY HUMMUS AND V",
+          "category": "dairy",
+          "price": 4.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "BURRA A",
+          "category": "other",
+          "price": 4.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "5.3 OZ",
+          "category": "other",
+          "price": 4.79,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "VEGAN THAI GREEN CURRY",
+          "category": "other",
+          "price": 4.69,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "VEG BEEF - LESS GRND",
+          "category": "meat",
+          "price": 3.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "T FIG OLIVE CRISPS",
+          "category": "other",
+          "price": 3.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "- BROCCOLI BABY 12OZ",
+          "category": "produce",
+          "price": 3.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "BLACKBERRIES OZ",
+          "category": "other",
+          "price": 3.49,
+          "quantity": 6,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "CAULIFLOWER EACH",
+          "category": "other",
+          "price": 2.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "VEGETABLE FRIED",
+          "category": "other",
+          "price": 2.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "VEG SOY CHORIZO",
+          "category": "other",
+          "price": 2.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "COCONUT ORGANIC SMOOTHIE",
+          "category": "other",
+          "price": 2.79,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "COCONUT ORGANIC SMOOTHIE",
+          "category": "other",
+          "price": 2.79,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "- SALAD BABY SPINACH ORG",
+          "category": "produce",
+          "price": 2.29,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "CARRO'S CUT PEELED ORG POMEGRANATE",
+          "category": "other",
+          "price": 1.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "BROCCOLI CROWNS",
+          "category": "produce",
+          "price": 1.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "POTATO SWEET EACH EACH",
+          "category": "produce",
+          "price": 1.98,
+          "quantity": 2,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "COCONUT MILK",
+          "category": "dairy",
+          "price": 1.89,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "MILK QUART WHOLE",
+          "category": "dairy",
+          "price": 1.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "PEPPER BELL RED XL EACH",
+          "category": "other",
+          "price": 1.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "ONIONS RED RED JUMBO",
+          "category": "produce",
+          "price": 1.19,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "BLACK BEANS",
+          "category": "pantry",
+          "price": 0.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "GARBANZO BEANS",
+          "category": "pantry",
+          "price": 0.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "GARBANZO BEANS",
+          "category": "pantry",
+          "price": 0.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "OL VE BEANS OIL 100% ITALIA",
+          "category": "pantry",
+          "price": 0.99,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "A - SHALLOTS EACH",
+          "category": "other",
+          "price": 0.69,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "A - APPLES FUJI EACH",
+          "category": "produce",
+          "price": 0.69,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "healthy"
+        },
+        {
+          "name": "LIME EACH",
+          "category": "other",
+          "price": 0.49,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "DISPOSABLE BAG FEE",
+          "category": "other",
+          "price": 0.2,
+          "quantity": 4,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "Bottle Deposit FRIED RICE",
+          "category": "pantry",
+          "price": 0.05,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        },
+        {
+          "name": "Bottle Deposit",
+          "category": "other",
+          "price": 0.05,
+          "quantity": 1,
+          "dietary_tags": [],
+          "nutrition": "neutral"
+        }
+      ]
+    }
+  ]
+}

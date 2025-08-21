@@ -1,0 +1,969 @@
+{
+  "success": true,
+  "confidence": 0.8466666666666667,
+  "rawText": "Trader Joes\nTrader Joe'S Portland (519), Marginal Way, Portland, ME 04101\nPhone: 207-699-3799\n\nDate: 2025-08-17\n\nOL VE OIL $9.99\nOL VE BEANS OIL 100% ITALIA $0.99\nCOCONUT MILK $1.89\nBLACK BEANS $0.99\nGARBANZO BEANS $0.99\nGARBANZO BEANS $0.99\nT FIG OLIVE CRISPS $3.99\nA - AVOCADO BAG HASS 4CT $4.99\nLIME EACH $0.49\nONIONS RED RED JUMBO $1.19\n2x POTATO SWEET EACH EACH $1.98\nA - SHALLOTS EACH $0.69\nA - APPLES FUJI EACH $0.69\nBURRA A $4.99\nMILK QUART WHOLE $1.49\nCOCONUT ORGANIC SMOOTHIE $2.79\nBottle Deposit $0.05\nVEGAN THAI GREEN CURRY $4.69\nCOCONUT ORGANIC SMOOTHIE $2.79\nBottle Deposit FRIED RICE $0.05\nVEGETABLE FRIED $2.99\nCARRO'S CUT PEELED ORG POMEGRANATE $1.99\n5.3 OZ $4.79\nWRAP CREAMY HUMMUS AND V $4.99\n6x BLACKBERRIES OZ $3.49\nVEG SOY CHORIZO $2.99\n18x BLUEBERRIES OZ $5.49\nSUSHI VEGETARIAN ROLL $5.99\nVEG BEEF - LESS GRND $3.99\nPEPPER BELL RED XL EACH $1.49\n- BROCCOLI BABY 12OZ $3.49\nBROCCOLI CROWNS $1.99\nCAULIFLOWER EACH $2.99\n- SALAD BABY SPINACH ORG $2.29\n4x DISPOSABLE BAG FEE $0.20\n\nTax: $0.62\nTotal: $1.00\n",
+  "receipt": {
+    "merchant": "Trader Joes",
+    "address": "Trader Joe'S Portland (519), Marginal Way, Portland, ME 04101",
+    "phone": "207-699-3799",
+    "date": "2025-08-17",
+    "time": "12:33:00",
+    "total": 1,
+    "tax": 0.62,
+    "subtotal": 0,
+    "items": [
+      {
+        "name": "OL VE OIL",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 9.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "OL VE BEANS OIL 100% ITALIA",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "COCONUT MILK",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 1.89,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "BLACK BEANS",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "GARBANZO BEANS",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "GARBANZO BEANS",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "T FIG OLIVE CRISPS",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 3.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "A - AVOCADO BAG HASS 4CT",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 4.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "LIME EACH",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.49,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "ONIONS RED RED JUMBO",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 1.19,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "POTATO SWEET EACH EACH",
+        "quantity": 2,
+        "unitPrice": 0.99,
+        "totalPrice": 1.98,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "A - SHALLOTS EACH",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.69,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "A - APPLES FUJI EACH",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.69,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "BURRA A",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 4.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "MILK QUART WHOLE",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 1.49,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "COCONUT ORGANIC SMOOTHIE",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 2.79,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "Bottle Deposit",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.05,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "VEGAN THAI GREEN CURRY",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 4.69,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "COCONUT ORGANIC SMOOTHIE",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 2.79,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "Bottle Deposit FRIED RICE",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 0.05,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "VEGETABLE FRIED",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 2.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "CARRO'S CUT PEELED ORG POMEGRANATE",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 1.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "5.3 OZ",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 4.79,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "WRAP CREAMY HUMMUS AND V",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 4.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "BLACKBERRIES OZ",
+        "quantity": 6,
+        "unitPrice": null,
+        "totalPrice": 3.49,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "VEG SOY CHORIZO",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 2.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "BLUEBERRIES OZ",
+        "quantity": 18,
+        "unitPrice": null,
+        "totalPrice": 5.49,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "SUSHI VEGETARIAN ROLL",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 5.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "VEG BEEF - LESS GRND",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 3.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "PEPPER BELL RED XL EACH",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 1.49,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "- BROCCOLI BABY 12OZ",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 3.49,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "BROCCOLI CROWNS",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 1.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "CAULIFLOWER EACH",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 2.99,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "- SALAD BABY SPINACH ORG",
+        "quantity": 1,
+        "unitPrice": null,
+        "totalPrice": 2.29,
+        "category": null,
+        "confidence": 1
+      },
+      {
+        "name": "DISPOSABLE BAG FEE",
+        "quantity": 4,
+        "unitPrice": 0.05,
+        "totalPrice": 0.2,
+        "category": null,
+        "confidence": 1
+      }
+    ]
+  },
+  "rawData": {
+    "message": "SUCCESS: Result available",
+    "status": "done",
+    "status_code": 3,
+    "result": {
+      "establishment": "Trader Joes",
+      "validatedEstablishment": true,
+      "date": "2025-08-17 12:33:00",
+      "total": 1,
+      "url": "www.traderjoes.com",
+      "phoneNumber": "207-699-3799",
+      "paymentMethod": "American Express",
+      "address": "Trader Joe'S Portland (519), Marginal Way, Portland, ME 04101",
+      "cash": 0,
+      "change": 0,
+      "validatedTotal": false,
+      "subTotal": 0,
+      "validatedSubTotal": false,
+      "tax": 0.62,
+      "tip": 0,
+      "taxes": [
+        0.22
+      ],
+      "serviceCharges": [],
+      "discount": 0,
+      "rounding": 0,
+      "discounts": [],
+      "lineItems": [
+        {
+          "qty": 0,
+          "desc": "OL VE OIL",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "OL VE OIL",
+          "lineTotal": 9.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "OL VE BEANS OIL 100% ITALIA",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "OL VE BEANS OIL 100% ITALIA",
+          "lineTotal": 0.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "COCONUT",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "COCONUT MILK",
+          "lineTotal": 1.89,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "BLACK BEANS",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "BLACK BEANS",
+          "lineTotal": 0.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "GARBANZO BEANS",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "GARBANZO BEANS",
+          "lineTotal": 0.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "GARBANZO BEANS",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "GARBANZO BEANS",
+          "lineTotal": 0.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "T FIG & OLIVE CRISPS",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "T FIG OLIVE CRISPS",
+          "lineTotal": 3.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "A - AVOCADO BAG HASS 4CT",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "A - AVOCADO BAG HASS 4CT",
+          "lineTotal": 4.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "LIME EACH",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "LIME EACH",
+          "lineTotal": 0.49,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "ONIONS RED",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "ONIONS RED RED JUMBO",
+          "lineTotal": 1.19,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 2,
+          "desc": "POTATO SWEET EACH EACH",
+          "unit": "",
+          "price": 0.99,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "POTATO SWEET EACH EACH",
+          "lineTotal": 1.98,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "A - SHALLOTS EACH",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "A - SHALLOTS EACH",
+          "lineTotal": 0.69,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "A - APPLES FUJI EACH",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "A - APPLES FUJI EACH",
+          "lineTotal": 0.69,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "BURRA A",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "BURRA A",
+          "lineTotal": 4.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "MILK QUART WHOLE",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "MILK QUART WHOLE",
+          "lineTotal": 1.49,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "COCONUT ORGANIC SMOOTHIE",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "COCONUT ORGANIC SMOOTHIE",
+          "lineTotal": 2.79,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "Bottle Deposit",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "Bottle Deposit",
+          "lineTotal": 0.05,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "VEGAN THAI GREEN CURRY",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "VEGAN THAI GREEN CURRY",
+          "lineTotal": 4.69,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "COCONUT ORGANIC SMOOTHIE",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "COCONUT ORGANIC SMOOTHIE",
+          "lineTotal": 2.79,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "Bottle Deposit",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "Bottle Deposit FRIED RICE",
+          "lineTotal": 0.05,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "VEGETABLE FRIED",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "VEGETABLE FRIED",
+          "lineTotal": 2.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "CARRO'S CUT & PEELED ORG",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "CARRO'S CUT PEELED ORG POMEGRANATE",
+          "lineTotal": 1.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "5.3 OZ",
+          "unit": "OZ",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "5.3 OZ",
+          "lineTotal": 4.79,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "WRAP CREAMY HUMMUS AND V",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "WRAP CREAMY HUMMUS AND V",
+          "lineTotal": 4.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 6,
+          "desc": "BLACKBERRIES 6 OZ",
+          "unit": "OZ",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "BLACKBERRIES OZ",
+          "lineTotal": 3.49,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "VEG SOY CHORIZO",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "VEG SOY CHORIZO",
+          "lineTotal": 2.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 18,
+          "desc": "BLUEBERRIES 18 OZ",
+          "unit": "OZ",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "BLUEBERRIES OZ",
+          "lineTotal": 5.49,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "SUSHI VEGETARIAN ROLL",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "SUSHI VEGETARIAN ROLL",
+          "lineTotal": 5.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "VEG BEEF - LESS GRND",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "VEG BEEF - LESS GRND",
+          "lineTotal": 3.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "PEPPER BELL RED XL EACH",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "PEPPER BELL RED XL EACH",
+          "lineTotal": 1.49,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "- BROCCOLI BABY 12OZ",
+          "unit": "OZ",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "- BROCCOLI BABY 12OZ",
+          "lineTotal": 3.49,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "BROCCOLI CROWNS",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "BROCCOLI CROWNS",
+          "lineTotal": 1.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "CAULIFLOWER EACH",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "CAULIFLOWER EACH",
+          "lineTotal": 2.99,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "- SALAD BABY SPINACH ORG",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "- SALAD BABY SPINACH ORG",
+          "lineTotal": 2.29,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 4,
+          "desc": "DISPOSABLE BAG FEE",
+          "unit": "",
+          "price": 0.05,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "DISPOSABLE BAG FEE",
+          "lineTotal": 0.2,
+          "productCode": "",
+          "customFields": {}
+        }
+      ],
+      "summaryItems": [
+        {
+          "qty": 0,
+          "desc": "Tax : $ 4.99 @ 8.0%",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "Tax",
+          "descClean": "Tax : $ 4.99 @ 8.0%",
+          "lineTotal": 0.4,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "Tax : $ 3.99 @ 5.5%",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "Tax",
+          "descClean": "Tax : $ 3.99 @ 5.5%",
+          "lineTotal": 0.22,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "Total Bottle Deposit",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "Total Bottle Deposit",
+          "lineTotal": 0.1,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "AMERICAN EXPRESS ***********",
+          "unit": "",
+          "price": 0,
+          "symbols": [],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "AMERICAN EXPRESS ***********",
+          "lineTotal": 1,
+          "productCode": "",
+          "customFields": {}
+        },
+        {
+          "qty": 0,
+          "desc": "PURCHASE",
+          "unit": "",
+          "price": 0,
+          "symbols": [
+            "$"
+          ],
+          "discount": 0,
+          "lineType": "",
+          "descClean": "PURCHASE",
+          "lineTotal": 96.49,
+          "productCode": "",
+          "customFields": {}
+        }
+      ],
+      "subTotalConfidence": 0,
+      "taxesConfidence": [
+        0.7
+      ],
+      "serviceChargeConfidences": [],
+      "discountConfidences": [],
+      "totalConfidence": 0.6,
+      "dateConfidence": 0.95,
+      "establishmentConfidence": 0.99,
+      "tipConfidence": 0,
+      "cashConfidence": 0,
+      "changeConfidence": 0,
+      "roundingConfidence": 0,
+      "customFields": {
+        "URL": "www.traderjoes.com",
+        "Country": "USA",
+        "StoreID": "0519",
+        "Currency": "USD",
+        "VATNumber": "",
+        "ExpenseType": "",
+        "PaymentMethod": "American Express",
+        "CardLast4Digits": "1008"
+      },
+      "documentType": "receipt",
+      "currency": "USD",
+      "barcodes": [],
+      "dateISO": "2025-08-17T12:33:00",
+      "addressNorm": {
+        "city": "Portland",
+        "state": "ME",
+        "number": "519",
+        "street": "Marginal Way",
+        "suburb": "",
+        "country": "USA",
+        "building": "Trader Joe'S",
+        "postcode": "04101"
+      },
+      "expenseType": "None",
+      "otherData": []
+    },
+    "success": true,
+    "code": 202
+  }
+}
