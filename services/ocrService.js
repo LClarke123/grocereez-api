@@ -7,6 +7,13 @@ class OCRService {
     this.apiKey = process.env.TABSCANNER_API_KEY;
     this.baseURL = 'https://api.tabscanner.com/api/2/process';
     
+    // Debug environment variables
+    console.log('OCRService: Environment variable debugging:');
+    console.log('  - NODE_ENV:', process.env.NODE_ENV);
+    console.log('  - TABSCANNER_API_KEY available:', !!process.env.TABSCANNER_API_KEY);
+    console.log('  - All env vars starting with "TAB":', Object.keys(process.env).filter(key => key.startsWith('TAB')));
+    console.log('  - API key value (first 10 chars):', this.apiKey ? this.apiKey.substring(0, 10) + '...' : 'NOT FOUND');
+    
     if (!this.apiKey) {
       throw new Error('TABSCANNER_API_KEY environment variable is required');
     }
