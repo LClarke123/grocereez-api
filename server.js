@@ -156,6 +156,58 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
+// Admin endpoint to purge all mock/test data
+app.post('/admin/purge-data', async (req, res) => {
+  try {
+    console.log('Admin: Purging all mock/test data from database...');
+
+    // Delete all receipt items first (foreign key constraint)
+    const itemsResult = await pool.query('DELETE FROM receipt_items');
+    console.log(`Deleted ${itemsResult.rowCount} receipt items`);
+
+    // Delete all receipts
+    const receiptsResult = await pool.query('DELETE FROM receipts');
+    console.log(`Deleted ${receiptsResult.rowCount} receipts`);
+
+    // Delete all stores (they'll be recreated from real receipts)
+    const storesResult = await pool.query('DELETE FROM stores');
+    console.log(`Deleted ${storesResult.rowCount} stores`);
+
+    // Delete processing logs if the table exists
+    try {
+      const logsResult = await pool.query('DELETE FROM processing_logs');
+      console.log(`Deleted ${logsResult.rowCount} processing logs`);
+    } catch (error) {
+      console.log('Processing logs table does not exist (skipping)');
+    }
+
+    // Delete user sessions (force re-authentication with clean slate)
+    const sessionsResult = await pool.query('DELETE FROM user_sessions');
+    console.log(`Deleted ${sessionsResult.rowCount} user sessions`);
+
+    const summary = {
+      message: 'Database purged successfully',
+      deleted: {
+        receipts: receiptsResult.rowCount,
+        receipt_items: itemsResult.rowCount,
+        stores: storesResult.rowCount,
+        user_sessions: sessionsResult.rowCount
+      },
+      timestamp: new Date().toISOString()
+    };
+
+    console.log('Database purge completed:', summary);
+    res.json(summary);
+
+  } catch (error) {
+    console.error('Error purging database:', error);
+    res.status(500).json({ 
+      error: 'Database purge failed',
+      details: error.message 
+    });
+  }
+});
+
 // Authentication endpoints
 app.post('/auth/register', authLimiter, async (req, res) => {
   try {
