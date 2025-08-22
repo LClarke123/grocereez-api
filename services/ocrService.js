@@ -27,6 +27,8 @@ class OCRService {
     try {
       // Step 1: Upload receipt for processing
       console.log('OCRService: Step 1 - Uploading receipt to TabScanner...');
+      console.log('OCRService: API Key length:', this.apiKey ? this.apiKey.length : 'NO KEY');
+      console.log('OCRService: Using endpoint:', this.baseURL);
       
       const formData = new FormData();
       formData.append('file', imageBuffer, {
@@ -34,6 +36,8 @@ class OCRService {
         contentType: 'image/jpeg'
       });
       formData.append('documentType', 'receipt');
+      
+      console.log('OCRService: FormData prepared, sending request...');
       
       const uploadResponse = await axios.post(this.baseURL, formData, {
         headers: {
@@ -93,14 +97,22 @@ class OCRService {
       
     } catch (error) {
       console.error('OCRService: TabScanner API error:', error.message);
+      console.error('OCRService: Error name:', error.name);
+      console.error('OCRService: Error code:', error.code);
       
       if (error.response) {
         console.error('OCRService: API Error Status:', error.response.status);
-        console.error('OCRService: API Error Data:', error.response.data);
+        console.error('OCRService: API Error Headers:', error.response.headers);
+        console.error('OCRService: API Error Data:', JSON.stringify(error.response.data, null, 2));
+      } else if (error.request) {
+        console.error('OCRService: No response received from TabScanner API');
+        console.error('OCRService: Request details:', error.request);
+      } else {
+        console.error('OCRService: Error setting up request:', error.message);
       }
       
       // Don't fall back to mock data - throw the error so it can be handled properly
-      throw error;
+      throw new Error(`TabScanner API Error: ${error.message}`);
     }
   }
 
