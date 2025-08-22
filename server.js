@@ -579,7 +579,7 @@ app.get('/receipts/:id/status', authenticateToken, async (req, res) => {
 
     const receiptResult = await pool.query(
       `SELECT id, status, created_at, processed_at, processing_errors, total_amount, 
-              ocr_raw_text, llm_processed_data
+              ocr_raw_text
        FROM receipts 
        WHERE id = $1 AND user_id = $2`,
       [id, req.userId]
@@ -610,7 +610,7 @@ app.get('/receipts/:id/status', authenticateToken, async (req, res) => {
         totalAmount: receipt.total_amount,
         errors: receipt.processing_errors,
         hasRawText: !!receipt.ocr_raw_text,
-        hasProcessedData: !!receipt.llm_processed_data
+        hasProcessedData: !!receipt.ocr_raw_text
       },
       logs: logsResult.rows
     });
