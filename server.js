@@ -12,6 +12,7 @@ const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const OCRService = require('./services/ocrService');
+const { initializeDatabase } = require('./init-db');
 require('dotenv').config();
 
 const app = express();
@@ -759,10 +760,24 @@ app.use('*', (req, res) => {
   res.status(404).json({ error: 'Endpoint not found' });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`GroceryPal API server running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-});
+// Initialize database and start server
+const startServer = async () => {
+  try {
+    if (process.env.DATABASE_URL) {
+      console.log('Initializing database...');
+      await initializeDatabase();
+    }
+    
+    app.listen(PORT, () => {
+      console.log(`GroceryPal API server running on port ${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+    });
+  } catch (error) {
+    console.error('Server startup error:', error);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 module.exports = app;
