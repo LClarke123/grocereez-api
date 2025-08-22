@@ -45,8 +45,8 @@ const corsOrigins = process.env.NODE_ENV === 'production'
 console.log('CORS Origins:', corsOrigins);
 
 app.use(cors({
-  origin: true, // Allow all origins temporarily for debugging
-  credentials: true,
+  origin: '*', // Allow all origins for production deployment
+  credentials: false, // Disable credentials when using wildcard
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
