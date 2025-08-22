@@ -610,16 +610,6 @@ app.get('/receipts/:id/status', authenticateToken, async (req, res) => {
 
     const receipt = receiptResult.rows[0];
 
-    // Get processing logs for this receipt
-    const logsResult = await pool.query(
-      `SELECT log_level, message, context, created_at 
-       FROM processing_logs 
-       WHERE receipt_id = $1 
-       ORDER BY created_at DESC 
-       LIMIT 10`,
-      [id]
-    );
-
     res.json({
       receipt: {
         id: receipt.id,
@@ -630,8 +620,7 @@ app.get('/receipts/:id/status', authenticateToken, async (req, res) => {
         errors: receipt.processing_errors,
         hasRawText: !!receipt.ocr_raw_text,
         hasProcessedData: !!receipt.ocr_raw_text
-      },
-      logs: logsResult.rows
+      }
     });
   } catch (error) {
     console.error('Get receipt status error:', error);
