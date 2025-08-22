@@ -769,14 +769,21 @@ app.use('*', (req, res) => {
 // Initialize database and start server
 const startServer = async () => {
   try {
-    if (process.env.DATABASE_URL) {
-      console.log('Initializing database...');
-      await initializeDatabase();
-    }
-    
+    // Start server first
     app.listen(PORT, () => {
       console.log(`GroceryPal API server running on port ${PORT}`);
       console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      
+      // Initialize database in background after server starts
+      if (process.env.DATABASE_URL) {
+        console.log('Initializing database in background...');
+        initializeDatabase().then(() => {
+          console.log('Database initialization completed');
+        }).catch(error => {
+          console.error('Database initialization failed:', error);
+          // Don't exit - server can still handle basic requests
+        });
+      }
     });
   } catch (error) {
     console.error('Server startup error:', error);
