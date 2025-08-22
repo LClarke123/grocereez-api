@@ -789,6 +789,26 @@ app.use((error, req, res, next) => {
 });
 
 // Admin endpoint to purge all mock/test data (before 404 handler)
+// Debug endpoint to get receipt errors
+app.get('/debug/receipt/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await pool.query(
+      'SELECT id, status, processing_errors, created_at FROM receipts WHERE id = $1',
+      [id]
+    );
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Receipt not found' });
+    }
+    
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.error('Debug endpoint error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.post('/admin/purge-data', async (req, res) => {
   try {
     console.log('Admin: Purging all mock/test data from database...');
