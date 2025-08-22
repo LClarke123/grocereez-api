@@ -31,7 +31,11 @@ const ocrService = new OCRService();
 app.use(helmet());
 // CORS configuration for production and development
 const corsOrigins = process.env.NODE_ENV === 'production' 
-  ? (process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['https://grocereez.netlify.app'])
+  ? (process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : [
+      'https://grocereez.netlify.app',
+      'https://thriving-figolla-28c63e.netlify.app',
+      'https://68a871447aab3109d1d00dcc--grocereez.netlify.app'
+    ])
   : ['http://localhost:8081', 'http://localhost:8082', 'http://localhost:8083', 'http://localhost:3000'];
 
 console.log('CORS Origins:', corsOrigins);
