@@ -25,7 +25,19 @@ const pool = new Pool({
 });
 
 // Initialize OCR service
-const ocrService = new OCRService();
+console.log('Initializing OCR service...');
+console.log('TABSCANNER_API_KEY available:', !!process.env.TABSCANNER_API_KEY);
+console.log('TABSCANNER_API_KEY length:', process.env.TABSCANNER_API_KEY?.length || 'N/A');
+
+let ocrService;
+try {
+  ocrService = new OCRService();
+  console.log('OCR service initialized successfully');
+} catch (error) {
+  console.error('Failed to initialize OCR service:', error.message);
+  console.error('This will cause all receipt processing to fail');
+  throw error;
+}
 
 // Middleware
 app.use(helmet());
@@ -343,10 +355,16 @@ app.post('/receipts/upload', authenticateToken, upload.single('receipt'), async 
 
 // Async function to process receipts with OCR
 async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
-  console.log(`processReceiptAsync called for receipt ${receiptId}, filename: ${originalFilename}, buffer size: ${imageBuffer?.length || 'undefined'}`);
+  console.log(`=== RECEIPT PROCESSING START ===`);
+  console.log(`processReceiptAsync called for receipt ${receiptId}`);
+  console.log(`Filename: ${originalFilename}`);
+  console.log(`Buffer size: ${imageBuffer?.length || 'undefined'} bytes`);
+  console.log(`TabScanner API Key available: ${process.env.TABSCANNER_API_KEY ? 'YES' : 'NO'}`);
+  console.log(`TabScanner API Key length: ${process.env.TABSCANNER_API_KEY?.length || 'N/A'}`);
   
   try {
     console.log(`Starting OCR processing for receipt ${receiptId}`);
+    console.log('About to call ocrService.processReceipt...');
 
     // Process with OCR
     const ocrResult = await ocrService.processReceipt(imageBuffer, originalFilename);
