@@ -37,7 +37,8 @@ const corsOrigins = process.env.NODE_ENV === 'production'
       'https://68a871447aab3109d1d00dcc--grocereez.netlify.app',
       'https://silly-donut-211951.netlify.app',
       'https://cosmic-croissant-bc3258.netlify.app',
-      'https://gregarious-salmiakki-b614ee.netlify.app'
+      'https://gregarious-salmiakki-b614ee.netlify.app',
+      'https://inquisitive-eclair-2363c6.netlify.app'
     ])
   : ['http://localhost:8081', 'http://localhost:8082', 'http://localhost:8083', 'http://localhost:3000'];
 
