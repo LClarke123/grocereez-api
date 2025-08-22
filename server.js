@@ -399,12 +399,8 @@ async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
         [validation.errors, receiptId]
       );
       
-      // Log the failure
-      await pool.query(
-        `INSERT INTO processing_logs (receipt_id, log_level, message, context) 
-         VALUES ($1, 'error', 'OCR validation failed', $2)`,
-        [receiptId, JSON.stringify({ errors: validation.errors, warnings: validation.warnings })]
-      );
+      // Log the failure to console
+      console.log('OCR validation failed for receipt:', receiptId, { errors: validation.errors, warnings: validation.warnings });
       
       return;
     }
@@ -477,17 +473,13 @@ async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
       }
     }
 
-    // Log successful processing
-    await pool.query(
-      `INSERT INTO processing_logs (receipt_id, log_level, message, context) 
-       VALUES ($1, 'info', 'Receipt processed successfully', $2)`,
-      [receiptId, JSON.stringify({ 
-        merchant: ocrResult.receipt.merchant,
-        total: ocrResult.receipt.total,
-        itemCount: ocrResult.receipt.items?.length || 0,
-        confidence: ocrResult.confidence 
-      })]
-    );
+    // Log successful processing to console
+    console.log('Receipt processed successfully:', receiptId, { 
+      merchant: ocrResult.receipt.merchant,
+      total: ocrResult.receipt.total,
+      itemCount: ocrResult.receipt.items?.length || 0,
+      confidence: ocrResult.confidence 
+    });
 
     console.log(`Receipt ${receiptId} processed successfully`);
 
@@ -504,12 +496,8 @@ async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
       [[error.message], receiptId]
     );
     
-    // Log the error
-    await pool.query(
-      `INSERT INTO processing_logs (receipt_id, log_level, message, context) 
-       VALUES ($1, 'error', 'Receipt processing failed', $2)`,
-      [receiptId, JSON.stringify({ error: error.message, stack: error.stack })]
-    );
+    // Log the error to console
+    console.log('Receipt processing failed:', receiptId, { error: error.message, stack: error.stack });
   }
 }
 
@@ -825,13 +813,8 @@ app.post('/admin/purge-data', async (req, res) => {
     const storesResult = await pool.query('DELETE FROM stores');
     console.log(`Deleted ${storesResult.rowCount} stores`);
 
-    // Delete processing logs if the table exists
-    try {
-      const logsResult = await pool.query('DELETE FROM processing_logs');
-      console.log(`Deleted ${logsResult.rowCount} processing logs`);
-    } catch (error) {
-      console.log('Processing logs table does not exist (skipping)');
-    }
+    // Processing logs table doesn't exist in current schema (skipping)
+    console.log('Processing logs table not implemented (skipping deletion)');
 
     // Delete user sessions (force re-authentication with clean slate)
     const sessionsResult = await pool.query('DELETE FROM user_sessions');
