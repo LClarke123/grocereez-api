@@ -310,7 +310,21 @@ app.post('/receipts/upload', authenticateToken, upload.single('receipt'), async 
     const receipt = receiptResult.rows[0];
 
     // Process receipt with OCR asynchronously
-    processReceiptAsync(receipt.id, req.file.buffer, req.file.originalname);
+    processReceiptAsync(receipt.id, req.file.buffer, req.file.originalname)
+      .catch(error => {
+        console.error(`Fatal error in processReceiptAsync for receipt ${receipt.id}:`, error);
+        // Update receipt status to failed if async processing fails
+        pool.query(
+          `UPDATE receipts 
+           SET status = 'failed', 
+               processing_errors = $1, 
+               processed_at = CURRENT_TIMESTAMP 
+           WHERE id = $2`,
+          [`Fatal processing error: ${error.message}`, receipt.id]
+        ).catch(dbError => {
+          console.error('Failed to update receipt status after processing error:', dbError);
+        });
+      });
 
     res.status(201).json({
       message: 'Receipt uploaded successfully and is being processed',
@@ -328,6 +342,8 @@ app.post('/receipts/upload', authenticateToken, upload.single('receipt'), async 
 
 // Async function to process receipts with OCR
 async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
+  console.log(`processReceiptAsync called for receipt ${receiptId}, filename: ${originalFilename}, buffer size: ${imageBuffer?.length || 'undefined'}`);
+  
   try {
     console.log(`Starting OCR processing for receipt ${receiptId}`);
 
@@ -379,24 +395,20 @@ async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
       `UPDATE receipts 
        SET status = 'completed',
            receipt_date = $1,
-           receipt_time = $2,
-           total_amount = $3,
-           tax_amount = $4,
-           subtotal_amount = $5,
-           ocr_raw_text = $6,
-           llm_processed_data = $7,
-           processing_errors = $8,
+           total_amount = $2,
+           tax_amount = $3,
+           subtotal = $4,
+           ocr_raw_text = $5,
+           processing_errors = $6,
            processed_at = CURRENT_TIMESTAMP
-       WHERE id = $9`,
+       WHERE id = $7`,
       [
         ocrResult.receipt.date,
-        ocrResult.receipt.time,
         ocrResult.receipt.total,
         ocrResult.receipt.tax,
         ocrResult.receipt.subtotal,
         ocrResult.rawText,
-        JSON.stringify(ocrResult),
-        validation.warnings,
+        JSON.stringify(validation.warnings),
         receiptId
       ]
     );
@@ -429,19 +441,18 @@ async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
 
     // Insert receipt items
     if (ocrResult.receipt.items && ocrResult.receipt.items.length > 0) {
+      console.log(`Inserting ${ocrResult.receipt.items.length} receipt items for receipt ${receiptId}`);
       for (const item of ocrResult.receipt.items) {
         await pool.query(
           `INSERT INTO receipt_items 
-           (receipt_id, item_name, quantity, unit_price, line_total, confidence_score, raw_text) 
-           VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+           (receipt_id, product_name, quantity, unit_price, line_total) 
+           VALUES ($1, $2, $3, $4, $5)`,
           [
             receiptId,
             item.name,
             item.quantity || 1,
             item.unitPrice,
-            item.totalPrice,
-            item.confidence,
-            item.name // Store original as raw_text
+            item.totalPrice
           ]
         );
       }
