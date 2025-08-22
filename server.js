@@ -92,8 +92,8 @@ const authenticateToken = async (req, res, next) => {
     return res.status(401).json({ error: 'Access token required' });
   }
 
-  // Handle development mock tokens
-  if (process.env.NODE_ENV === 'development' && token.startsWith('dev-mock-token-')) {
+  // Handle demo tokens for MVP (both development and production)
+  if (token.startsWith('dev-mock-token-') || token.startsWith('demo-token-')) {
     console.log('Development mode: Accepting mock token for testing');
     const mockUserId = '00000000-0000-4000-8000-000000000001';
     
