@@ -22,9 +22,8 @@ async function purgeMockData() {
     const storesResult = await pool.query('DELETE FROM stores');
     console.log(`Deleted ${storesResult.rowCount} stores`);
 
-    // Delete processing logs
-    const logsResult = await pool.query('DELETE FROM processing_logs');
-    console.log(`Deleted ${logsResult.rowCount} processing logs`);
+    // Processing logs table doesn't exist in current schema (skipping)
+    console.log('Processing logs table not implemented (skipping deletion)');
 
     // Delete user sessions (force re-authentication with clean slate)
     const sessionsResult = await pool.query('DELETE FROM user_sessions');
