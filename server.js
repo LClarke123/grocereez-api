@@ -341,9 +341,15 @@ async function processReceiptAsync(receiptId, imageBuffer, originalFilename) {
       total: ocrResult.receipt?.total,
       itemCount: ocrResult.receipt?.items?.length || 0
     });
+    
+    // Debug: Log the full OCR result
+    console.log('DEBUG: Full OCR Result:', JSON.stringify(ocrResult, null, 2));
 
     // Validate OCR results
     const validation = ocrService.validateOCRResult(ocrResult);
+    
+    // Debug: Log validation result
+    console.log('DEBUG: Validation Result:', JSON.stringify(validation, null, 2));
     
     if (!validation.isValid) {
       console.error(`OCR validation failed for receipt ${receiptId}:`, validation.errors);
