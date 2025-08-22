@@ -6,14 +6,22 @@ class OCRService {
   constructor() {
     this.apiKey = process.env.TABSCANNER_API_KEY;
     this.baseURL = 'https://api.tabscanner.com/api/2/process';
+    
+    console.log('OCRService: Environment check:');
+    console.log('  - NODE_ENV:', process.env.NODE_ENV);
+    console.log('  - TABSCANNER_API_KEY length:', this.apiKey ? this.apiKey.length : 'undefined');
+    console.log('  - API Key starts with:', this.apiKey ? this.apiKey.substring(0, 10) + '...' : 'NO KEY');
+    
     // Force real API usage when we have a valid API key
     this.useMockData = !this.apiKey || this.apiKey === 'demo_key';
     
     console.log('OCRService: Using real TabScanner API:', !this.useMockData);
-    console.log('OCRService: API Key configured:', !!this.apiKey);
+    console.log('OCRService: Will use mock data:', this.useMockData);
     
     if (!this.useMockData) {
-      console.log('OCRService: API Key (first 10 chars):', this.apiKey.substring(0, 10) + '...');
+      console.log('OCRService: TabScanner API ready with key:', this.apiKey.substring(0, 10) + '...');
+    } else {
+      console.log('OCRService: Using mock data - API key missing or invalid');
     }
   }
 
