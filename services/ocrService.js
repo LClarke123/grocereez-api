@@ -7,22 +7,11 @@ class OCRService {
     this.apiKey = process.env.TABSCANNER_API_KEY;
     this.baseURL = 'https://api.tabscanner.com/api/2/process';
     
-    console.log('OCRService: Environment check:');
-    console.log('  - NODE_ENV:', process.env.NODE_ENV);
-    console.log('  - TABSCANNER_API_KEY length:', this.apiKey ? this.apiKey.length : 'undefined');
-    console.log('  - API Key starts with:', this.apiKey ? this.apiKey.substring(0, 10) + '...' : 'NO KEY');
-    
-    // Force real API usage when we have a valid API key
-    this.useMockData = !this.apiKey || this.apiKey === 'demo_key';
-    
-    console.log('OCRService: Using real TabScanner API:', !this.useMockData);
-    console.log('OCRService: Will use mock data:', this.useMockData);
-    
-    if (!this.useMockData) {
-      console.log('OCRService: TabScanner API ready with key:', this.apiKey.substring(0, 10) + '...');
-    } else {
-      console.log('OCRService: Using mock data - API key missing or invalid');
+    if (!this.apiKey) {
+      throw new Error('TABSCANNER_API_KEY environment variable is required');
     }
+    
+    console.log('OCRService: TabScanner API initialized with key:', this.apiKey.substring(0, 10) + '...');
   }
 
   /**
@@ -32,14 +21,8 @@ class OCRService {
    * @returns {Promise<Object>} OCR results
    */
   async processReceipt(imageBuffer, filename) {
-    console.log('OCRService: Starting receipt processing for file:', filename);
+    console.log('OCRService: Starting TabScanner API processing for file:', filename);
     console.log('OCRService: Image buffer size:', imageBuffer.length, 'bytes');
-    
-    // Use mock data if no API key configured
-    if (this.useMockData) {
-      console.log('OCRService: Using mock OCR response (no valid API key)');
-      return this.getMockOCRResponse(filename);
-    }
 
     try {
       // Step 1: Upload receipt for processing
@@ -121,99 +104,6 @@ class OCRService {
     }
   }
 
-  /**
-   * Generate mock OCR response for development/testing
-   * @param {string} filename - Original filename
-   * @returns {Object} Mock OCR results
-   */
-  getMockOCRResponse(filename) {
-    const mockData = {
-      success: true,
-      confidence: 0.92,
-      rawText: `TRADER JOE'S
-Store #123
-123 Main Street
-Anytown, CA 90210
-
-Date: ${new Date().toLocaleDateString()}
-Time: ${new Date().toLocaleTimeString()}
-
-Organic Bananas     $2.99
-Almond Milk         $3.49
-Greek Yogurt        $5.99
-Sourdough Bread     $2.49
-Coffee Beans        $8.99
-
-Subtotal           $23.95
-Tax                 $1.92
-TOTAL              $25.87
-
-Thank you for shopping!`,
-      receipt: {
-        merchant: "Trader Joe's",
-        address: "123 Main Street, Anytown, CA 90210",
-        phone: null,
-        date: new Date().toISOString().split('T')[0],
-        time: new Date().toTimeString().split(' ')[0],
-        total: 25.87,
-        tax: 1.92,
-        subtotal: 23.95,
-        items: [
-          {
-            name: "Organic Bananas",
-            quantity: 1,
-            unitPrice: 2.99,
-            totalPrice: 2.99,
-            category: "Produce",
-            confidence: 0.95
-          },
-          {
-            name: "Almond Milk",
-            quantity: 1,
-            unitPrice: 3.49,
-            totalPrice: 3.49,
-            category: "Dairy",
-            confidence: 0.93
-          },
-          {
-            name: "Greek Yogurt",
-            quantity: 1,
-            unitPrice: 5.99,
-            totalPrice: 5.99,
-            category: "Dairy",
-            confidence: 0.91
-          },
-          {
-            name: "Sourdough Bread",
-            quantity: 1,
-            unitPrice: 2.49,
-            totalPrice: 2.49,
-            category: "Bakery",
-            confidence: 0.89
-          },
-          {
-            name: "Coffee Beans",
-            quantity: 1,
-            unitPrice: 8.99,
-            totalPrice: 8.99,
-            category: "Beverages",
-            confidence: 0.94
-          }
-        ]
-      },
-      rawData: {
-        source: 'mock_data',
-        filename: filename,
-        timestamp: new Date().toISOString()
-      }
-    };
-
-    console.log('OCRService: Generated mock response with merchant:', mockData.receipt.merchant);
-    console.log('OCRService: Mock data total amount:', mockData.receipt.total);
-    console.log('OCRService: Mock data items count:', mockData.receipt.items.length);
-    
-    return mockData;
-  }
 
   /**
    * Parse TabScanner response into standardized format
