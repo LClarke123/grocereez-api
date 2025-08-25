@@ -171,11 +171,11 @@ class OCRService {
         console.log('OCRService: Extracted date:', result.receipt.date);
         
         // Extract financial information
-        result.receipt.total = this.parseAmount(receipt.total) || 0;
-        result.receipt.tax = this.parseAmount(receipt.tax) || 0;
-        result.receipt.subtotal = this.parseAmount(receipt.subTotal) || 0;
+        const extractedTotal = this.parseAmount(receipt.total) || 0;
+        const extractedTax = this.parseAmount(receipt.tax) || 0;
+        const extractedSubtotal = this.parseAmount(receipt.subTotal) || 0;
         
-        console.log('OCRService: Extracted totals - Total:', result.receipt.total, 'Tax:', result.receipt.tax, 'Subtotal:', result.receipt.subtotal);
+        console.log('OCRService: Extracted totals - Total:', extractedTotal, 'Tax:', extractedTax, 'Subtotal:', extractedSubtotal);
         
         // Extract line items
         if (receipt.lineItems && Array.isArray(receipt.lineItems)) {
@@ -192,6 +192,43 @@ class OCRService {
             }));
           
           console.log('OCRService: Processed', result.receipt.items.length, 'valid line items');
+          
+          // Calculate total from line items for validation
+          const calculatedSubtotal = result.receipt.items.reduce((sum, item) => sum + (item.totalPrice || 0), 0);
+          console.log('OCRService: Calculated subtotal from items:', calculatedSubtotal);
+          
+          // Use calculated totals if they make more sense or if extracted totals are missing
+          const finalSubtotal = extractedSubtotal > 0 ? extractedSubtotal : calculatedSubtotal;
+          const finalTax = extractedTax > 0 ? extractedTax : 0;
+          const finalTotal = extractedTotal > 0 ? extractedTotal : (finalSubtotal + finalTax);
+          
+          // Check for discrepancies and log warnings
+          const tolerance = 0.02; // 2 cent tolerance for rounding differences
+          if (Math.abs(calculatedSubtotal - finalSubtotal) > tolerance && calculatedSubtotal > 0) {
+            console.warn('OCRService: Subtotal discrepancy detected!');
+            console.warn('  - TabScanner subtotal:', extractedSubtotal);
+            console.warn('  - Calculated from items:', calculatedSubtotal);
+            console.warn('  - Using:', finalSubtotal);
+          }
+          
+          if (Math.abs((calculatedSubtotal + finalTax) - finalTotal) > tolerance && calculatedSubtotal > 0) {
+            console.warn('OCRService: Total discrepancy detected!');
+            console.warn('  - TabScanner total:', extractedTotal);
+            console.warn('  - Calculated total (items + tax):', calculatedSubtotal + finalTax);
+            console.warn('  - Using:', finalTotal);
+          }
+          
+          // Set final amounts
+          result.receipt.total = finalTotal;
+          result.receipt.tax = finalTax;
+          result.receipt.subtotal = finalSubtotal;
+          
+          console.log('OCRService: Final totals - Total:', result.receipt.total, 'Tax:', result.receipt.tax, 'Subtotal:', result.receipt.subtotal);
+        } else {
+          // No line items, use extracted values as-is
+          result.receipt.total = extractedTotal;
+          result.receipt.tax = extractedTax;
+          result.receipt.subtotal = extractedSubtotal;
         }
         
         // Set confidence scores based on TabScanner's confidence fields
