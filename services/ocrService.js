@@ -200,18 +200,35 @@ class OCRService {
           // Use calculated totals if they make more sense or if extracted totals are missing
           const finalSubtotal = extractedSubtotal > 0 ? extractedSubtotal : calculatedSubtotal;
           const finalTax = extractedTax > 0 ? extractedTax : 0;
-          const finalTotal = extractedTotal > 0 ? extractedTotal : (finalSubtotal + finalTax);
+          
+          // Smart total calculation: prefer calculated total if TabScanner total seems wrong
+          let finalTotal;
+          const calculatedTotal = finalSubtotal + finalTax;
+          const tolerance = 0.10; // 10 cents tolerance for total validation
+          
+          if (extractedTotal > 0 && Math.abs(extractedTotal - calculatedTotal) <= tolerance) {
+            // TabScanner total is close to calculated total, use it
+            finalTotal = extractedTotal;
+          } else {
+            // TabScanner total is missing or very different from calculated, use calculated
+            finalTotal = calculatedTotal;
+            if (extractedTotal > 0) {
+              console.warn('OCRService: TabScanner total seems incorrect, using calculated total');
+              console.warn('  - TabScanner total:', extractedTotal);
+              console.warn('  - Calculated total:', calculatedTotal);
+            }
+          }
           
           // Check for discrepancies and log warnings
-          const tolerance = 0.02; // 2 cent tolerance for rounding differences
-          if (Math.abs(calculatedSubtotal - finalSubtotal) > tolerance && calculatedSubtotal > 0) {
+          const roundingTolerance = 0.02; // 2 cent tolerance for rounding differences
+          if (Math.abs(calculatedSubtotal - finalSubtotal) > roundingTolerance && calculatedSubtotal > 0) {
             console.warn('OCRService: Subtotal discrepancy detected!');
             console.warn('  - TabScanner subtotal:', extractedSubtotal);
             console.warn('  - Calculated from items:', calculatedSubtotal);
             console.warn('  - Using:', finalSubtotal);
           }
           
-          if (Math.abs((calculatedSubtotal + finalTax) - finalTotal) > tolerance && calculatedSubtotal > 0) {
+          if (Math.abs((calculatedSubtotal + finalTax) - finalTotal) > roundingTolerance && calculatedSubtotal > 0) {
             console.warn('OCRService: Total discrepancy detected!');
             console.warn('  - TabScanner total:', extractedTotal);
             console.warn('  - Calculated total (items + tax):', calculatedSubtotal + finalTax);
